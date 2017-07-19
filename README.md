@@ -1,1 +1,1 @@
-# Modern fron-end webdevelopment starter kit
+# Modern front-end web development starter kit
