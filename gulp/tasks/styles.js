@@ -1,18 +1,23 @@
 const
   gulp = require('gulp'),
   $ = require('gulp-load-plugins')(),
-  config = require('./config');
+  config = require('./config'),
+  mergeStream = require('merge-stream');
 
 gulp.task('dev:styles', styles);
 
 function styles() {
-  return gulp
+  const normalize = gulp.src('./node_modules/normalize.css/normalize.css'),
+    ourStyles = gulp
     .src(config.styles.src)
     .pipe($.plumber())
     .pipe($.sourcemaps.init())
     .pipe($.sass(config.styles.sass))
     .pipe($.autoprefixer())
     .pipe($.csscomb())
-    .pipe($.sourcemaps.write())
-    .pipe(gulp.dest(config.styles.dest))
+    .pipe($.sourcemaps.write());
+
+  return mergeStream(normalize, ourStyles)
+    .pipe($.concat('styles.css'))
+    .pipe(gulp.dest(config.styles.dest));
 }
