@@ -1,11 +1,9 @@
-class Person {
-  constructor(name) {
-    this.name = name;
-  }
-}
+import $ from 'jquery';
+import Person from './modules/Person';
 
-const john = new Person('John Doe');
+const jane = new Person('Jane Smith');
 
-console.log(john.name);
-let newArray = [1, 2, 3];
-console.log(newArray[0]);
+console.log('It\'s working!!');
+console.log(jane.name);
+jane.greet();
+$('h1').css({color: '#B43F6B'});

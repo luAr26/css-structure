@@ -4,7 +4,7 @@ const
   browserSync = require('browser-sync');
 
 
-gulp.task('dev', gulp.series('dev:clean', gulp.parallel('dev:scripts', 'dev:styles')));
+
 gulp.task('styles:inject', stylesInject);
 gulp.task('dev:watch', gulp.series('dev', watch));
 
@@ -19,7 +19,10 @@ function watch() {
     cb();
   });
   gulp.watch(config.styles.watch, gulp.series('dev:cleanCSS', 'dev:styles', 'styles:inject'));
-  gulp.watch(config.scripts.watch, gulp.series('dev:cleanJS', 'dev:scripts'));
+  gulp.watch(config.scripts.watch, gulp.series('dev:cleanJS', 'dev:scripts', (cb) => {
+    browserSync.reload();
+    cb();
+  }));
 }
 
 function stylesInject() {

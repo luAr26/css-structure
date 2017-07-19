@@ -13,17 +13,19 @@
     "url": "https://github.com/luAr26/modern-fontend"
   },
   "devDependencies": {
+    "babel-core": "^6.25.0",
+    "babel-loader": "^7.1.1",
     "babel-preset-es2015": "^6.24.1",
     "browser-sync": "^2.18.12",
     "del": "^3.0.0",
     "gulp": "github:gulpjs/gulp#4.0",
     "gulp-autoprefixer": "^4.0.0",
-    "gulp-babel": "^6.1.2",
     "gulp-csscomb": "^3.0.8",
     "gulp-load-plugins": "^1.5.0",
     "gulp-plumber": "^1.1.0",
     "gulp-sass": "^3.1.0",
-    "gulp-sourcemaps": "^2.6.0"
+    "gulp-sourcemaps": "^2.6.0",
+    "webpack": "^3.3.0"
   },
   "browserslist": [
     "> 1%",

@@ -1,16 +1,27 @@
 const
   gulp = require("gulp"),
-  $ = require('gulp-load-plugins')(),
-  config = require('./config');
+  webpack = require('webpack'),
+  webpackConfig = require('../../webpack.config');
 
-gulp.task('dev:scripts', scripts);
+gulp.task('dev:scripts', (cb) => {
+  const
+    config = clone(webpackConfig);
+  config.devtool = 'eval-source-map';
 
-function scripts() {
-  return gulp
-    .src(config.scripts.src)
-    .pipe($.plumber())
-    .pipe($.sourcemaps.init())
-    .pipe($.babel())
-    .pipe($.sourcemaps.write('.'))
-    .pipe(gulp.dest(config.scripts.dest));
+  const compiler = webpack(config);
+
+  compiler.run((err, stats) => {
+    if (err) {
+      console.log(err.toString());
+    }
+    console.log(stats.toString({
+      colors: true,
+      exclude: ['node_modules', 'bower-components', 'jam', 'components']
+    }));
+    cb();
+  });
+});
+
+function clone(obj) {
+  return Object.assign({}, obj);
 }
