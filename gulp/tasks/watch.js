@@ -14,10 +14,10 @@ function watch() {
       baseDir: 'app'
     }
   });
-  gulp.watch(config.html.watch, function(cb) {
+  gulp.watch(config.html.watch, gulp.series('dev:cleanHTML', 'dev:html', function(cb) {
     browserSync.reload();
     cb();
-  });
+  }));
   gulp.watch(config.styles.watch, gulp.series('dev:cleanCSS', 'dev:styles', 'styles:inject'));
   gulp.watch(config.scripts.watch, gulp.series('dev:cleanJS', 'dev:scripts', (cb) => {
     browserSync.reload();

@@ -1,6 +1,8 @@
 module.exports = {
   html: {
-    watch: './app/index.html'
+    src: './app/assets/html/*.html',
+    watch: './app/assets/html/**/*.html',
+    dest: './app'
   },
   styles: {
     src: './app/assets/styles/styles.sass',
@@ -16,5 +18,5 @@ module.exports = {
     dest: './app/temp/scripts',
     watch: './app/assets/scripts/**/*.js'
   },
-  clean: ['./app/temp/scripts/**/*', './app/temp/styles/**/*']
+  clean: ['./app/temp/scripts/**/*', './app/temp/styles/**/*', './app/*.html']
 };
