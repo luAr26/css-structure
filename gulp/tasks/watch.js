@@ -14,7 +14,7 @@ function watch() {
       baseDir: 'app'
     }
   });
-  gulp.watch(config.html.watch, gulp.series('dev:cleanHTML', 'dev:html', function(cb) {
+  gulp.watch(config.html.watch, gulp.series('dev:html', function(cb) {
     browserSync.reload();
     cb();
   }));

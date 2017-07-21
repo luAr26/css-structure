@@ -38,6 +38,7 @@
     "jquery": "^3.2.1",
     "lazysizes": "^4.0.0-rc3",
     "normalize.css": "^7.0.0",
-    "picturefill": "^3.0.2"
+    "picturefill": "^3.0.2",
+    "susy": "^3.0.0"
   }
 }

@@ -10,7 +10,8 @@ module.exports = {
     watch: './app/assets/styles/**/*.sass',
     inject: './app/temp/styles/styles.css',
     sass: {
-      outputStyle: 'nested'
+      outputStyle: 'nested',
+      includePaths: ['node_modules/susy/sass']
     }
   },
   scripts: {
