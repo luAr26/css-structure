@@ -3,11 +3,16 @@ const
   webpack = require('webpack'),
   webpackConfig = require('../../webpack.config');
 
-gulp.task('dev:scripts', (cb) => {
+gulp.task('dev:scripts', (cb) => scripts(true, cb));
+gulp.task('prod:scripts', (cb) => scripts(false, cb));
+
+function scripts(isDev, cb) {
   const
     config = clone(webpackConfig);
-  config.devtool = 'eval-source-map';
 
+  if (isDev) {
+    config.devtool = 'eval-source-map';
+  }
   const compiler = webpack(config);
 
   compiler.run((err, stats) => {
@@ -20,7 +25,7 @@ gulp.task('dev:scripts', (cb) => {
     }));
     cb();
   });
-});
+}
 
 function clone(obj) {
   return Object.assign({}, obj);

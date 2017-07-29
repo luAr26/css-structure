@@ -19,5 +19,10 @@ module.exports = {
     dest: './app/temp/scripts',
     watch: './app/assets/scripts/**/*.js'
   },
-  clean: ['./app/temp/scripts/**/*', './app/temp/styles/**/*', './app/*.html']
+  clean: ['./app/temp/scripts/**/*', './app/temp/styles/**/*', './app/*.html'],
+  prod: {
+    dist: './docs',
+    images: './docs/assets/images',
+    html: './app/*.html'
+  }
 };
