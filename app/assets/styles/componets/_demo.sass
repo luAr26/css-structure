@@ -1,0 +1,51 @@
+.demo-link
+  color: $text-color
+  text-decoration: none
+  text-align: center
+  display: inline-block
+  border: 1px solid $text-color
+  padding: 15px
+  border-radius: 10px
+  margin: 15px 15px 0
+
+[data-span]
+  background: linear-gradient(to left, rgba(red, 0.3), rgba(red, 0.3)), rgba(white, 0.5)
+  background-clip: content-box, padding-box
+  float: left
+  padding-bottom: 1rem
+  padding-top: 1rem
+  border: 1px solid red
+  text-align: center
+
+[data-span="2"]
+  width: span(2)
+  margin-right: gutter()
+
+[data-span="4"]
+  width: span(4)
+  padding-left: gutter() / 2
+  padding-right: gutter() / 2
+  margin-bottom: gutter()
+  &:nth-child(2n + 2)
+    float: right
+
+[data-span="8"]
+  width: span(8)
+
+[data-push]
+  margin-left: span(2 wide)
+
+[data-pull="1"]
+  margin-top: 4rem
+  margin-left: 0 - span(1 wide)
+
+[data-pad="1"]
+  padding: 0 span(1 wide)
+
+[data-span="special"]
+  width: span(first 3 wide of (1 1 2 3 5 8) wide set-gutters 20px)
+
+span
+  display: inline-block
+  &:first-child:not(:last-child):after
+    content: ' / '

@@ -1,114 +1,33 @@
-@import susy
-@import plugins/svg-grid/prefix
-@import variables
+// Libraries and helpers
+@import lib/lib
+@import helpers/helpers
 
-//http://thesassway.com/beginner
+// Variables
+@import 'variables/susy'
+@import variables/colors
+@import variables/typography
+@import variables/breakpoints
 
-// Susy configuration
-$susy: (svg-grid-colors: hsl(120, 30%, 85%), columns: susy-repeat(8), gutters: .15, spread: narrow, container-spread: narrow)
-$heading-font-size: (default: 24px, small: 28px)
+// Base files
+@import base/base
 
-=clearfix
-  &:after
-    content: ' '
-    clear: both
-    display: block
+// Layouts
+@import layouts/layouts
 
-*
-  box-sizing: border-box
+// Objects
 
-body
-  background-color: #eee
-  font-family: 'Roboto', sans-serif
-  font-weight: 300
-  color: $text-color
+// Components
+@import componets/demo
 
-  .test
-    font-size: 20px
+// Utilities
+@import utilities
 
-h1
-  text-align: center
-  font-size: map_get($heading-font-size, default)
-  border: 1px solid #B43F6B
-  padding: 20px
-  border-radius: 20px
-  width: 80%
-  margin: 0 auto
-  position: absolute
-  top: 50%
-  left: 50%
-  transform: translate(-50%, -50%)
 
-  @media screen and (min-width: 600px)
-    font-size: map_get($heading-font-size, small)
-    padding: 40px
-    border-radius: 40px
-    width: 55%
-  @media screen and (min-width: 900px)
-    width: 40%
-  @media screen and (min-width: 1300px)
-    width: 35%
 
-.clearfix
-  +clearfix
 
-.container
-  margin: 3rem 0
-  padding: 1rem 0
-  background: susy-svg-grid() no-repeat scroll
-  &:after
-    content: ' '
-    clear: both
-    display: block
 
-.demo-link
-  color: $text-color
-  text-decoration: none
-  text-align: center
-  display: inline-block
-  border: 1px solid $text-color
-  padding: 15px
-  border-radius: 10px
-  margin: 15px 15px 0
-
-[data-span]
-  background: linear-gradient(to left, rgba(red, 0.3), rgba(red, 0.3)), rgba(white, 0.5)
-  background-clip: content-box, padding-box
-  float: left
-  padding-bottom: 1rem
-  padding-top: 1rem
-  border: 1px solid red
-  text-align: center
-
-[data-span="2"]
-  width: span(2)
-  margin-right: gutter()
-
-[data-span="4"]
-  width: span(4)
-  padding-left: gutter() / 2
-  padding-right: gutter() / 2
-  margin-bottom: gutter()
-  &:nth-child(2n + 2)
-    float: right
-
-[data-span="8"]
-  width: span(8)
-
-[data-push]
-  margin-left: span(2 wide)
-
-[data-pull="1"]
-  margin-top: 4rem
-  margin-left: 0 - span(1 wide)
-
-[data-pad="1"]
-  padding: 0 span(1 wide)
-
-[data-span="special"]
-  width: span(first 3 wide of (1 1 2 3 5 8) wide set-gutters 20px)
-
-span
-  display: inline-block
-  &:first-child:not(:last-child):after
-    content: ' / '
+// Articles which inspired this architecture
+// https://zellwk.com/blog/css-architecture-1/
+// https://zellwk.com/blog/css-architecture-2/
+// https://zellwk.com/blog/css-architecture-3/
+// http://thesassway.com/beginner
