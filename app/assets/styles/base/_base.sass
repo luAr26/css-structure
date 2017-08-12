@@ -1,3 +1,11 @@
+html
+  font-size: 100%
+
+body
+  font-family: $text-font-family
+  line-height: $line-height-base
+  color: map_get($colors, text-color)
+
 h1,
 h2,
 h3,
@@ -15,6 +23,7 @@ button
   border: 0
   border-radius: 0
   outline: none
+  line-height: inherit
 
   &:hover,
   &:active,
@@ -32,3 +41,4 @@ img,
 object,
 video
   max-width: 100%
+  height: auto

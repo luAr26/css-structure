@@ -1,7 +1,21 @@
 // Add mixins like clearfix, element-invisible and css shapes
 
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return #{$remSize}rem
+
 =clearfix
   &:after
     content: ' '
     clear: both
     display: block
+=sr-only
+  font: 0/0 a
+  color: transparent
+  text-shadow: none
+  background-color: transparent
+  border: 0
+=vertical-align
+  position: relative
+  top: 50%
+  transform: translateY(-50%)

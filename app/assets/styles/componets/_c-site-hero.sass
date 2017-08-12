@@ -1,0 +1,27 @@
+.c-site-hero
+  height: 100vh
+  background-color: black
+  background-image: url('../../assets/images/hero-bg.jpg') // I don't know it it works in production
+  background-size: cover
+  &__greeting
+    +t4
+    font-family: 'Leckerli One', cursive
+    margin-bottom: calculateRem(14px)
+    color: #fff
+  &__intro
+    +t1
+    font-family: Montserrat, sans-serif
+    font-weight: 800
+    color: #fff
+    margin-bottom: calculateRem(7px)
+  &__name
+    color: map_get($colors, primary)
+  &__job-title
+    +t3
+    font-family: Montserrat, sans-serif
+    font-weight: 300
+    color: #fff
+    margin-bottom: calculateRem(14px)
+  &__description
+    +t8
+    margin-bottom: calculateRem(35px)

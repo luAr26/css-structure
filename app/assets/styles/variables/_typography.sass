@@ -1,0 +1,48 @@
+$text-font-family: Cambay, sans-serif
+$line-height-base-in-px: 28px
+$line-height-base: calculateRem($line-height-base-in-px)
+$sizes: (t1: 60px, t2: 42px, t3: 40px, t4: 36px, t5: 32px, t6: 28px, t7: 26px, t8: 24px, t9: 20px, t10: 18px, s1: 14px)
+
+=t1
+  font-size: calculateRem(map_get($sizes, t1))
+  line-height: calculateRem($line-height-base-in-px * 2.25)
+
+=t2
+  font-size: calculateRem(map_get($sizes, t2))
+  line-height: calculateRem($line-height-base-in-px * 1.75)
+
+=t3
+  font-size: calculateRem(map_get($sizes, t3))
+  line-height: calculateRem($line-height-base-in-px * 1.75)
+
+=t4
+  font-size: calculateRem(map_get($sizes, t4))
+  line-height: calculateRem($line-height-base-in-px * 1.5)
+
+=t5
+  font-size: calculateRem(map_get($sizes, t5))
+  line-height: calculateRem($line-height-base-in-px * 1.25)
+
+=t6
+  font-size: calculateRem(map_get($sizes, t6))
+  line-height: calculateRem($line-height-base-in-px * 1.25)
+
+=t7
+  font-size: calculateRem(map_get($sizes, t7))
+  line-height: calculateRem($line-height-base-in-px * 1.25)
+
+=t8
+  font-size: calculateRem(map_get($sizes, t8))
+  line-height: calculateRem($line-height-base-in-px)
+
+=t9
+  font-size: calculateRem(map_get($sizes, t9))
+  line-height: calculateRem($line-height-base-in-px)
+
+=t10
+  font-size: calculateRem(map_get($sizes, t10))
+  line-height: calculateRem($line-height-base-in-px)
+
+=s1
+  font-size: calculateRem(map_get($sizes, s1))
+  line-height: calculateRem($line-height-base-in-px * 0.75)

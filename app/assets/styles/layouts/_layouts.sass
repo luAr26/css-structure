@@ -1,11 +1,8 @@
-.clearfix
-  +clearfix
-
 .l-wrap
-  margin: 3rem 0
-  padding: 1rem 0
-  background: susy-svg-grid() no-repeat scroll
-  &:after
-    content: ' '
-    clear: both
-    display: block
+  position: relative
+  max-width: 75rem
+  margin: 0 auto
+  //background: susy-svg-grid() no-repeat scroll
+  +clearfix
+  &__vertical-align
+    +vertical-align
