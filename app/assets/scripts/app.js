@@ -1,1 +1,3 @@
-console.log('works');
+import SiteHeaderMobileMenu from './modules/SiteHeaderMobileMenu';
+
+const mobileMenu = new SiteHeaderMobileMenu();

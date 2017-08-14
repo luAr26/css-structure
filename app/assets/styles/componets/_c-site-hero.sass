@@ -3,25 +3,53 @@
   background-color: black
   background-image: url('../../assets/images/hero-bg.jpg') // I don't know it it works in production
   background-size: cover
+  &__content
+    text-align: center
+    color: #fff
+    padding-top: calculateRem(21px)
+    +breakpoint(map_get($breakpoints, medium))
+      padding-top: calculateRem(28px)
+    +breakpoint(map_get($breakpoints, large))
+      text-align: left
+      padding-top: calculateRem(49px)
+    +breakpoint(orientation landscape)
+      padding-top: calculateRem(42px)
   &__greeting
-    +t4
+    +t8
     font-family: 'Leckerli One', cursive
     margin-bottom: calculateRem(14px)
-    color: #fff
+    +breakpoint(map_get($breakpoints, small))
+      +t4
+      margin-bottom: calculateRem(21px)
+    +breakpoint(orientation landscape)
+      margin-bottom: calculateRem(7px)
   &__intro
-    +t1
+    +t5
     font-family: Montserrat, sans-serif
     font-weight: 800
-    color: #fff
     margin-bottom: calculateRem(7px)
+    +breakpoint(map_get($breakpoints, small))
+      +t1
+      margin-bottom: calculateRem(14px)
   &__name
     color: map_get($colors, primary)
   &__job-title
-    +t3
+    +t9
     font-family: Montserrat, sans-serif
     font-weight: 300
-    color: #fff
     margin-bottom: calculateRem(14px)
+    +breakpoint(map_get($breakpoints, small))
+      +t3
+      margin-bottom: calculateRem(21px)
+    +breakpoint(orientation landscape)
+      margin-bottom: calculateRem(7px)
   &__description
-    +t8
-    margin-bottom: calculateRem(35px)
+    margin-bottom: calculateRem(28px)
+    color: map_get($colors, text-color)
+    +breakpoint(map_get($breakpoints, small))
+      +t8
+      margin-bottom: calculateRem(42px)
+    +breakpoint(orientation landscape)
+      margin-bottom: calculateRem(14px)
+
+// Todo: Work more on media queries for landscape view

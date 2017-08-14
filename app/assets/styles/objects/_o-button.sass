@@ -17,8 +17,6 @@
   font-family: Montserrat, sans-serif
   font-weight: 700
   border-radius: calculateRem(20px)
-  &--margin-top
-    margin-top: calculateRem(11px)
   &--bg-dark
     background-color: #2b2b2b
   &--no-border
@@ -32,6 +30,9 @@
     padding-bottom: calculateRem(14px)
   &--more-border-radius
     border-radius: calculateRem(30px)
-
-// https://www.udemy.com/git-a-web-developer-job-mastering-the-modern-workflow/learn/v4/t/lecture/5228912?start=0
-// https://www.udemy.com/git-a-web-developer-job-mastering-the-modern-workflow/learn/v4/t/lecture/5335434?start=0
+  &--mobile
+    margin-bottom: calculateRem(7px)
+    +breakpoint(map_get($breakpoints, medium))
+      float: right
+      margin-top: calculateRem(12px)
+      margin-bottom: 0

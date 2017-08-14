@@ -4,6 +4,10 @@
   $remSize: $size / 16px
   @return #{$remSize}rem
 
+@function calculateEm($size)
+  $emSize: $size / 16px
+  @return #{$emSize}em
+
 =clearfix
   &:after
     content: ' '

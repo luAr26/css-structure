@@ -1,0 +1,19 @@
+.o-navigation
+  &__list
+    list-style: none
+    padding: 0
+    margin: 0
+    +breakpoint(map_get($breakpoints, large))
+      margin-right: calculateRem(28px)
+  &__list-item
+    display: inline-block
+    a
+      display: block
+      padding: calculateRem(14px)
+      font-size: calculateRem(18px)
+      text-decoration: none
+      color: #fff
+  &--mobile
+    +breakpoint(map_get($breakpoints, medium))
+      float: right
+      margin-top: calculateRem(7px)

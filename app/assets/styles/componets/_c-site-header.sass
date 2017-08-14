@@ -2,4 +2,79 @@
   position: absolute
   width: 100%
   z-index: 2
-  padding-top: calculateRem(60px)
+  overflow: visible
+  margin-top: calculateRem(21px)
+  +breakpoint(map_get($breakpoints, medium))
+    margin-top: calculateRem(28px)
+  +breakpoint(map_get($breakpoints, large))
+    margin-top: calculateRem(49px)
+
+  &__menu-icon-bar
+    display: block
+    height: calculateRem(4px)
+    background-color: #fff
+    position: relative
+    top: 50%
+    transform: translateY(-50%)
+    transform-origin: 0 50%
+    transition: all 0.25s ease-out
+
+  &__menu-icon
+    width: calculateRem(28px)
+    height: calculateRem(28px)
+    position: absolute
+    top: calculateRem(14px)
+    right: calculateRem(14px)
+    cursor: pointer
+    &:before,
+    &:after
+      content: ''
+      display: block
+      width: 100%
+      position: absolute
+      top: 0
+      left: 0
+      height: calculateRem(4px)
+      background-color: #fff
+      transform-origin: 0 0
+      transition: transform 0.25s ease-out
+    &:after
+      top: auto
+      bottom: 0
+      transform-origin: 0 100%
+    &--show-until-medium
+      +breakpoint(map_get($breakpoints, medium))
+        display: none
+    &--close-x
+      &:before
+        transform: rotate(45deg) scaleX(1.25)
+      &:after
+        transform: rotate(-45deg) scaleX(1.25)
+      .c-site-header__menu-icon-bar
+        opacity: 0
+        transform: scaleX(0.001)
+
+  &__menu-content
+    position: relative
+    top: calculateRem(14px)
+    z-index: -10
+    padding-top: calculateRem(21px)
+    text-align: center
+    opacity: 0
+    background-color: rgba(#2b2b2b, 0.98)
+    box-shadow: 0 calculateRem(10px) calculateRem(30px) 0 rgba(0, 0, 0, 0.3)
+    transition: all 0.25s ease
+    +breakpoint(map_get($breakpoints, medium))
+      display: block
+      top: 0
+      background-color: transparent
+      box-shadow: none
+      float: right
+      padding-top: 0
+      opacity: 1
+      z-index: 1
+      +clearfix
+    &--is-visible
+      opacity: 1
+      z-index: 1
+      top: 0
