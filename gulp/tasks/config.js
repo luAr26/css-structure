@@ -11,7 +11,11 @@ module.exports = {
     inject: './app/temp/styles/styles.css',
     sass: {
       outputStyle: 'nested',
-      includePaths: ['node_modules/susy/sass', 'node_modules/breakpoint-sass/stylesheets']
+      includePaths: ['node_modules/susy/sass', 'node_modules/breakpoint-sass/stylesheets', 'node_modules/font-awesome/scss']
+    },
+    fa: {
+      src: './node_modules/font-awesome/fonts/**/*',
+      dest: './app/temp/fonts'
     }
   },
   scripts: {

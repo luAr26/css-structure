@@ -4,7 +4,7 @@ const
   config = require('./config'),
   mergeStream = require('merge-stream');
 
-gulp.task('dev:styles', styles);
+gulp.task('dev:styles', gulp.series(copyFontAwesomeFonts, styles));
 
 function styles() {
   const normalize = gulp.src('./node_modules/normalize.css/normalize.css'),
@@ -20,4 +20,9 @@ function styles() {
   return mergeStream(normalize, ourStyles)
     .pipe($.concat('styles.css'))
     .pipe(gulp.dest(config.styles.dest));
+}
+
+function copyFontAwesomeFonts() {
+  return gulp.src(config.styles.fa.src)
+    .pipe(gulp.dest(config.styles.fa.dest));
 }

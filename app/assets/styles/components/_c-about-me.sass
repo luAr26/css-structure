@@ -1,0 +1,19 @@
+.c-about-me
+  background-color: map_get($colors, primary)
+  &__intro
+    margin-bottom: calculateRem(21px)
+    +breakpoint(map_get($breakpoints, medium))
+      width: span(6)
+      float: left
+  &__bio
+    color: #fff
+    +breakpoint(map_get($breakpoints, medium))
+      width: span(6)
+      float: right
+    p
+      margin-bottom: calculateRem(14px)
+      &:last-child
+        margin-bottom: calculateRem(21px)
+  &__services
+    background-color: #007af2
+    padding: calculateRem(77px) 0
