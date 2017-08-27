@@ -27,6 +27,10 @@ module.exports = {
   prod: {
     dist: './docs',
     images: './docs/assets/images',
-    html: './app/*.html'
+    html: './app/*.html',
+    fonts: {
+      src: './app/temp/fonts/**/*',
+      dest: './docs/assets/fonts'
+    }
   }
 };
