@@ -7,6 +7,12 @@
   +clearfix
   &__vertical-align
     +vertical-align
+  &--mb-84px
+    margin-bottom: calculateRem(42px)
+    +breakpoint(map_get($breakpoints, medium))
+      margin-bottom: calculateRem(84px)
 
 .l-page-section
-  padding: calculateRem(134px) 0
+  padding: calculateRem(42px) 0
+  +breakpoint(map_get($breakpoints, medium))
+    padding: calculateRem(84px) 0

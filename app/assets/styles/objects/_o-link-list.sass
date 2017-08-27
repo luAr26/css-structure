@@ -1,0 +1,27 @@
+.o-link-list
+  list-style: none
+  padding: 0
+  margin: 0
+  +clearfix
+  &__list-item
+    float: left
+    margin-right: calculateRem(7px)
+    margin-bottom: calculateRem(7px)
+    +breakpoint(calculateRem(490px))
+      margin-bottom: 0
+  &__link
+    +t7
+    display: block
+    color: #4da7ff
+    padding: 0 calculateRem(7px)
+    transition: color .25s ease
+    +breakpoint(map_get($breakpoints, medium))
+      +t9
+    i
+      position: relative
+      top: calculateRem(5px)
+    &:hover
+      color: #fff
+  &--float-left
+    +breakpoint(map_get($breakpoints, medium))
+      float: left

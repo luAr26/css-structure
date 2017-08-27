@@ -1,22 +1,28 @@
 .c-service
-  position: relative
-  padding-left: calculateRem(91px)
+  text-align: center
+  +breakpoint(map_get($breakpoints, medium))
+    text-align: left
   &__name
-    margin-bottom: calculateRem(28px)
+    margin-bottom: calculateRem(21px)
+    +breakpoint(map_get($breakpoints, medium))
+      span
+        display: block
   &__description
     color: #fff
     +t10
   &__icon
-    position: absolute
-    top: 0
-    left: 0
-    font-size: calculateRem(63px)
+    font-size: calculateRem(77px)
     color: map_get($colors, secondary)
+    margin-bottom: calculateRem(28px)
 .l-service
-  width: span(4)
-  float: left
-  margin-right: gutter()
-  &:nth-child(3n+3)
-    margin-right: 0
-
-// Todo: Add Font Awesome to the workflow: make gulp task
+  margin-bottom: calculateRem(42px)
+  &:last-child
+    margin-bottom: 0
+  +breakpoint(map_get($breakpoints, medium))
+    margin-bottom: 0
+  +breakpoint(map_get($breakpoints, medium))
+    width: span(4)
+    float: left
+    margin-right: gutter()
+    &:nth-child(3n+3)
+      margin-right: 0

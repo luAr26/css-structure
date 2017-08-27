@@ -1,19 +1,42 @@
 .c-about-me
   background-color: map_get($colors, primary)
   &__intro
+    +t5
     margin-bottom: calculateRem(21px)
+    +breakpoint(calculateRem(372px))
+      +t4
+    +breakpoint(map_get($breakpoints, small))
+      +t2
     +breakpoint(map_get($breakpoints, medium))
       width: span(6)
       float: left
+      margin-bottom: 0
   &__bio
     color: #fff
     +breakpoint(map_get($breakpoints, medium))
       width: span(6)
       float: right
     p
+      +t9
       margin-bottom: calculateRem(14px)
       &:last-child
-        margin-bottom: calculateRem(21px)
+        //margin-bottom: calculateRem(21px)
   &__services
     background-color: #007af2
-    padding: calculateRem(77px) 0
+    padding: calculateRem(35px) 0
+    +breakpoint(map_get($breakpoints, medium))
+      padding: calculateRem(77px) 0
+  &__social-media
+    padding-top: calculateRem(42px)
+    +breakpoint(map_get($breakpoints, medium))
+      padding-top: calculateRem(84px)
+  &__social-media-description
+    +t9
+    color: #fff
+    margin-bottom: calculateRem(14px)
+    +breakpoint(map_get($breakpoints, medium))
+      position: relative
+      top: calculateRem(5px)
+      float: left
+      margin-right: calculateRem(119px)
+      margin-bottom: 0
